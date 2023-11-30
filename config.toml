@@ -11,14 +11,6 @@ default_language = "en"
 # Theme name to use
 # theme = ""
 
-# Highlight all code blocks found
-# Or enable the highlight.js in the 'extra' config section
-highlight_code = true
-
-# Which theme to use for the code highlighting.
-# See below for list of accepted values
-highlight_theme = "base16-atelierdune-light" # "1337"
-
 # Whether to generate a RSS feed automatically
 generate_feed = true
 feed_filename = "rss.xml"
@@ -66,13 +58,23 @@ ignored_content = []
 # A list of directories to search for additional `.sublime-syntax` files in.
 extra_syntaxes = []
 
-# Optional translation object. The key if present should be a language code
+[markdown]
+# Highlight all code blocks found
+# Or enable the highlight.js in the 'extra' config section
+highlight_code = true
+
+# Which theme to use for the code highlighting.
+# See below for list of accepted values
+#highlight_theme = "monokai"#"base16-atelierdune-light" # "1337"
+
+render_emoji = true
+
 [translations]
 
 # You can put any kind of data in there and it
 # will be accessible in all templates
+
 [extra]
-# Put all your custom variables here
 
 # MathJax rendering support
 math = true
@@ -98,7 +100,7 @@ hermit_social = [
 
 enable = true
 clipboard = true
-theme = "base16-atelierdune-light" # "railscasts"
+theme = "1337"#"railscasts"
 
 [extra.disqus]
 
