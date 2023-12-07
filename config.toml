@@ -67,7 +67,7 @@ highlight_code = true
 # See below for list of accepted values
 #highlight_theme = "monokai"#"base16-atelierdune-light" # "1337"
 
-render_emoji = true
+render_emoji = true # like :smile: and :shrug:
 
 [translations]
 
@@ -100,7 +100,7 @@ hermit_social = [
 
 enable = true
 clipboard = true
-theme = "1337"#"railscasts"
+theme = "1337" #"railscasts"
 
 [extra.disqus]
 
