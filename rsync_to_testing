@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+rsync -vhPr --delete-after ~/dev/blog/public ~/dev/websites/alphara
