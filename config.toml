@@ -13,7 +13,7 @@ default_language = "en"
 
 # Whether to generate a RSS feed automatically
 generate_feed = true
-feed_filename = "rss.xml"
+feed_filename = "atom.xml"
 
 # The number of articles to include in the RSS feed. Will include all items if
 # not set (the default).
@@ -28,7 +28,7 @@ feed_filename = "rss.xml"
 #     ]
 #
 taxonomies = [
-           {name = "tags", rss = true}
+    {name = "tags", rss = true}
 ]
 
 # Whether to automatically compile all sass files found in the `sass` directory
@@ -37,19 +37,18 @@ compile_sass = true
 # When set to "true", the generated HTML files are minified.
 minify_html = false
 
+# This does the whole example.com/image.jpg url hardlinking thing (supposedly)
 # When set to "true", files in the `static` directory are hard-linked. Useful for large
 # static files. Note that for this to work, both `static` and the
 # output directory need to be on the same filesystem. Note that the theme's `static`
 # files are always copied, regardless of this setting.
-hard_link_static = false
+hard_link_static = true
 
-# Whether to build a search index out of the pages and section
-# content for the `default_language`
+# Whether to build a search index out of the pages and section content for the `default_language`
 # or whether to build a search index to be used later on by a JavaScript library
 build_search_index = true # false
 
-# A list of glob patterns specifying asset files to ignore when
-# processing the content directory.
+# A list of glob patterns specifying asset files to ignore when processing the content directory.
 # Defaults to none, which means all asset files are copied over to the public folder.
 # Example:
 #     ignored_content = ["*.{graphml,xlsx}", "temp.*"]
@@ -59,13 +58,9 @@ ignored_content = []
 extra_syntaxes = []
 
 [markdown]
-# Highlight all code blocks found
-# Or enable the highlight.js in the 'extra' config section
-highlight_code = true
 
-# Which theme to use for the code highlighting.
-# See below for list of accepted values
-#highlight_theme = "monokai"#"base16-atelierdune-light" # "1337"
+# Highlight all code blocks found
+highlight_code = true
 
 render_emoji = true # like :smile: and :shrug:
 
@@ -76,7 +71,7 @@ render_emoji = true # like :smile: and :shrug:
 
 [extra]
 
-# MathJax rendering support
+# MathJax / LaTeX rendering support
 math = true
 
 home_subtitle = "Some profound and catchy statement"
@@ -89,35 +84,49 @@ hermit_menu = [
 ]
 
 hermit_social = [
-    { name = "twitter", link = "https://twitter.com" },
-    { name = "github", link = "https://github.com" },
-    { name = "email", link = "mailto:author@domain.com" }
+    { name = "twitter", link = "https://twitter.com/IustinRaznic" },
+    { name = "linkedin", link = "https://www.linkedin.com/in/iustin-raznic" },
+    { name = "github", link = "https://github.com/xAlpharax" },
+    { name = "youtube", link = "https://www.youtube.com/@alphara2643" },
+    { name = "mastodon", link = "https://mastodon.social/@alphara" },
+    { name = "email", link = "mailto:iustin@alphara.art" }
 ]
 
-
-# You can use highlight.js for code highlighting if you dont like the default one
 [extra.highlightjs]
 
 enable = true
 clipboard = true
-theme = "1337" #"railscasts"
+theme = "1337"
+# theme = "railscasts"
+# theme = "vs2015"
 
 [extra.disqus]
 
-enable = false
+# enable = false
 
 # Take this from your Disqus account
-shortname = "my-supa-dupa-blog"
-# Cpmments can be disabled per page by setting:
+# shortname = "my-supa-dupa-blog"
+# Comments can be disabled per page by setting:
 # [extra]
 # disable_comments = true
 #
 # in the posts front-matter
 
+# Similarily, but unrelated
+# Table of content can be enabled by adding
+# +++
+# [extra]
+# toc=true
+# +++
+# to the page front matter
+# Icon will then appear above the page title that will toggle the ToC
+
 [extra.author]
+
 name = "Iustin Râznic"
 email = "iustin@alphara.art"
 
 [extra.google_analytics]
-enable = false
-id = "UA-4XXXXXXX-X"
+
+# enable = false
+# id = "UA-4XXXXXXX-X"
