@@ -2,4 +2,6 @@
 
 set -e
 
-rsync -vhPr --delete-after ~/dev/blog/public ~/dev/websites/alphara
+zola build
+
+rsync -vhPr --delete-after ~/dev/blog/public/* ~/dev/websites/alphara
