@@ -2,26 +2,30 @@
 title = "Typography"
 date = 2018-09-29T11:36:33+08:00
 draft = false
+
 [taxonomies]
-tags=["test", "original_post"]
+tags = ["test", "original_post"]
+
 [extra]
-toc=true
+toc = true
+disable_comments = false
 +++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.[^1]
 
 > An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.[^2]
----
-
-Inline styles：
-
-**strong**, *emphasis*, ***strong and emphasis***,`code`, <u>underline</u>, ~~strikethrough~~, :shrug: :heart: :joy: 🤣, $\LaTeX$, $X^2$, $H~2~O$, ==highlight==, [Link](https://example.com), and image:
-
-![img](https://picsum.photos/600/400/?random)
 
 ---
 
-Headings:
+Inline styles to test:
+
+**strong**, *emphasis*, ***strong and emphasis***, `code`, ~~strikethrough~~, :shrug: :heart: :joy: :purple_heart: , $\LaTeX$, $x^2+y^2=1$, $\phi \pi \gamma$, [Link](https://example.com) or just do <https://example.com>, testing image:
+
+![alt text for image](https://picsum.photos/600/400/?random)
+
+![or try this][1]
+
+---
 
 # Heading 1
 
@@ -29,13 +33,13 @@ Headings:
 
 ### Heading 3
 
-#### Heading 4
+#### Heading 4 is as big as normal text but bold
 
 ##### Heading 5
 
 ###### Heading 6
 
-Table:
+Cute Table:
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ | :-------------: | ------------: |
@@ -48,12 +52,12 @@ Lists:
 * Unordered list item 1.
 * Unordered list item 2.
 
+Unordered with + - * and Ordered with 1. or 1)
+
 1. ordered list item 1.
 2. ordered list item 2.
    + sub-unordered list item 1.
    + sub-unordered list item 2.
-     + [x] something is DONE.
-     + [ ] something is NOT DONE.
 
 Syntax Highlighting:
 
@@ -66,4 +70,6 @@ alert("Sum = " + sum);  // "+" means combine into a string
 
 [^1]: From [https://www.lipsum.com/](https://www.lipsum.com/)
 
-[^2]: From [https://en.wikipedia.org/wiki/Apple](https://en.wikipedia.org/wiki/Apple)
+[^2]: From [Apple](https://en.wikipedia.org/wiki/Apple)
+
+[1]: https://commonmark.org/help/images/favicon.png "CommonMark Creative Commons License"

@@ -4,4 +4,8 @@ set -e
 
 zola build
 
-rsync -vhPr --delete-after ~/dev/blog/public/* ~/dev/websites/alphara
+rm -rf ~/dev/websites/alphara
+
+rsync -vhPrtz --delete-after ~/dev/blog/public/* ~/dev/websites/alphara
+
+rm -rf ~/dev/blog/public
