@@ -50,8 +50,7 @@
 </div>
 {% endblock header %}
 
-{% block title %}
-{% endblock title %}
+{% block title %} {% endblock title %}
 
 {% block main %}
 <main class="site-main section-inner animated fadeIn faster">
@@ -169,8 +168,4 @@
 </main>
 {% endblock main %}
 
-{% block footer %}
-
-{{ macros::footer() }}
-
-{% endblock footer %}
+{% block footer %} {{ macros::footer() }} {% endblock footer %}

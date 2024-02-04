@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Inline styles to test:
 
-**strong**, *emphasis*, ***strong and emphasis***, `code`, ~~strikethrough~~, :shrug: :heart: :joy: :purple_heart: , $\LaTeX$, $x^2+y^2=1$, $\phi \pi \gamma$, [Link](https://example.com) or just do <https://example.com>, testing image:
+**strong**, *emphasis*, ***strong and emphasis***, `code`, ~~strikethrough~~, :shrug: :heart: :joy: :purple_heart:, $\LaTeX$, $x^2+y^2=1$, $\phi \space \pi \space \gamma$, [Link](https://example.com) or just do <https://example.com>, testing image:
 
 ![alt text for image](https://picsum.photos/600/400/?random)
 

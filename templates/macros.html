@@ -9,7 +9,6 @@
 {% endmacro read_time %}
 
 {% macro footer() %}
-
 <footer id="site-footer" class="section-inner thin animated fadeIn faster">
   <p>&copy; {{ now() | date(format="%Y") }} <a href="{{ config.base_url }}">{{ config.extra.author.name }}</a>{{ config.extra.footer_copyright | safe }}</p>
   <p>Made with <a href="https://www.getzola.org" target="_blank" rel="noopener">Zola</a> &#183; Theme <a href="https://github.com/VersBinarii/hermit_zola" target="_blank" rel="noopener">Hermit_Zola</a>
@@ -18,10 +17,7 @@
 	{% endif %}
   </p>
 </footer>
-
 {% endmacro footer %}
-
-
 
 {% macro render_social_icons() %}
 {% for icon in config.extra.hermit_social %}

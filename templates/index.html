@@ -1,4 +1,5 @@
 {% import "macros.html" as macros %}
+
 <!DOCTYPE html>
 <html lang="en-us">
   <meta charset="UTF-8" />
@@ -7,19 +8,45 @@
   <meta itemprop="name" content="{{config.title}}" />
   <meta itemprop="description" content="{{config.description}}" />
 
+
+
+  <!--- Instructions for web scrapers --->
+  <meta name="robots" content="index, follow">
+
+  <meta name="description" content="your website description">
+  <meta name="keywords" content="your, keywords, here">
+  <meta name="author" content="Iustin Râznic">
+
+  <!--- Many websites use this so it has become almost standard to include --->
+  <meta property="og:site_name" content="Site Name">
+  <meta name="twitter:domain" property="twitter:domain" content="example.org">
+  <meta name="og:title" property="og:title" content="Site Name">
+  <meta property="og:description" content="your website description">
+  <meta name="twitter:description" property="twitter:description" content="your website description">
+  <meta name="og:image" content="https://link-to-an-image-that-represents-your-site">
+
+  <!--- below is for twitter sharing previews \\ you can test this at cards-dev.twitter.com --->
+  <meta property="twitter:card" content="https://link-to-an-image-that-represents-your-site">
+  <meta name="twitter:image:src" property="twitter:image:src" content="https://link-to-an-image-that-represents-your-site">
+  <meta name="twitter:image" property="twitter:image" content="https://link-to-an-image-that-represents-your-site">
+  <meta name="og:image:alt" property="og:image:alt" content="alt text for your image">
+
+  <meta property="og:url" content="example.org">
+  <meta property="og:type" content="website">
+
+  <!--- If you have accounts on twitter that are relevant to your site --->
+  <meta name="twitter:site" property="twitter:site" content="@yourTwitterHandle">
+  <meta name="twitter:creator" property="twitter:creator" content="@yourTwitterHandle">
+
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="{{get_url(path="apple-touch-icon.png")}}"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="{{get_url(path="favicon-32x32.png")}}" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="{{get_url(path="favicon-16x16.png")}}"
-  />
-  <link
-    rel="shortcut icon"
-    href="{{get_url(path="favicon.ico")}}"
-  />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{get_url(path="favicon-32x32.png")}}"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="{{get_url(path="favicon-16x16.png")}}"/>
+  <link rel="shortcut icon" href="{{get_url(path="favicon.ico")}}"/>
+
   <link rel="stylesheet" href="{{get_url(path="style.css")}}"/>
+
   {% if page.title %}
   <title>{{page.title}}</title>
   {% else %}

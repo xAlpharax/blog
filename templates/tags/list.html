@@ -1,5 +1,8 @@
-{% extends "index.html" %} {% import "macros.html" as macros %} {% block header
-%}
+{% extends "index.html" %}
+
+{% import "macros.html" as macros %}
+
+{% block header %}
 <header id="site-header" class="animated slideInUp faster">
   <div class="hdr-wrapper section-inner">
     <div class="hdr-left">
@@ -35,8 +38,11 @@
     {% endfor %}
   </ul>
 </div>
-{% endblock header %} {% block title %} {% endblock title %} {% block main %}
+{% endblock header %}
 
+{% block title %} {% endblock title %}
+
+{% block main %}
 <main class="site-main section-inner thin animated fadeIn faster" style="text-align: center;">
   {% block content %}
   {% for tag in terms %}
@@ -49,6 +55,6 @@
   {% endfor %}
   {% endblock content %}
 </main>
+{% endblock main %}
 
-{% endblock main %} {% block footer %} {{ macros::footer() }} {% endblock footer
-%}
+{% block footer %} {{ macros::footer() }} {% endblock footer %}
