@@ -61,7 +61,7 @@ extra_syntaxes = []
 
 # Highlight all code blocks found
 highlight_code = true
-#highlight_theme = "1337" # weird behavior i need to fix
+highlight_theme = "base16-ocean-dark"
 
 render_emoji = true # like :smile: and :shrug:
 
@@ -72,8 +72,8 @@ render_emoji = true # like :smile: and :shrug:
 
 [extra]
 
-# MathJax / LaTeX rendering support
-math = true
+# MathJax / LaTeX rendering support globally (expensive)
+# math = true # you should enable this per-page when needed (it also gets automatically checked when detecting \tex stuff)
 
 home_subtitle = "Neural Art at its finest :))" # better title and description
 
@@ -95,9 +95,9 @@ hermit_social = [
 
 [extra.highlightjs]
 
-enable = true
-clipboard = true
-theme = "1337"
+#enable = true
+#clipboard = true
+#theme = "1337"
 # theme = "railscasts"
 # theme = "vs2015"
 
