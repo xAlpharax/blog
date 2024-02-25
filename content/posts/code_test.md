@@ -9,6 +9,14 @@ tags = ["test", "code"]
 [extra]
 disable_comments = true
 toc = false
+
+[extra.earlier]
+title = "Typography"
+permalink = "https://alphara.art/posts/typography"
+
+[extra.later]
+title = "Henlo Internet!"
+permalink = "https://alphara.art/posts/how-i-made-this-blog-with-zola/"
 +++
 
 ```rust

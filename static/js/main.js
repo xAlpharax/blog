@@ -3,10 +3,10 @@
  */
 
 // Throttle
-var throttle = (callback, limit) => {
+const throttle = (callback, limit) => {
     let timeoutHandler = null;
     return () => {
-        if (timeoutHandler == null) {
+        if (timeoutHandler === null) {
             timeoutHandler = setTimeout(() => {
                 callback();
                 timeoutHandler = null;
@@ -16,83 +16,62 @@ var throttle = (callback, limit) => {
 };
 
 // addEventListener Helper
-var listen = (ele, e, callback) => {
-    if (document.querySelector(ele) !== null) {
-        document.querySelector(ele).addEventListener(e, callback);
+const listen = (selector, eventType, callback) => {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.addEventListener(eventType, callback);
     }
 };
 
 // FUNCTIONS
 
 // Auto Hide Header
-var header = document.getElementById('site-header');
-var lastScrollPosition = window.pageYOffset;
+const header = document.getElementById('site-header');
+let lastScrollPosition = window.scrollY;
 
-var autoHideHeader = () => {
-    let currentScrollPosition = window.pageYOffset;
-    if (currentScrollPosition > lastScrollPosition) {
-        header.classList.remove('slideInUp');
-        header.classList.add('slideOutDown');
-    } else {
-        header.classList.remove('slideOutDown');
-        header.classList.add('slideInUp');
-    }
+const autoHideHeader = () => {
+    const currentScrollPosition = window.scrollY;
+
+    header.classList.toggle('slideInUp', currentScrollPosition <= lastScrollPosition);
+    header.classList.toggle('slideOutDown', currentScrollPosition > lastScrollPosition);
+
     lastScrollPosition = currentScrollPosition;
 };
 
 // Mobile Menu Toggle
-var mobileMenuVisible = false;
+let mobileMenuVisible = false;
+const mobileMenu = document.getElementById('mobile-menu');
 
-var toggleMobileMenu = () => {
-    let mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuVisible == false) {
-        mobileMenu.style.animationName = 'bounceInRight';
-        mobileMenu.style.webkitAnimationName = 'bounceInRight';
-        mobileMenu.style.display = 'block';
-        mobileMenuVisible = true;
-    } else {
-        mobileMenu.style.animationName = 'bounceOutRight';
-        mobileMenu.style.webkitAnimationName = 'bounceOutRight';
-        mobileMenuVisible = false;
-    }
+const toggleMobileMenu = () => {
+    const animationName = mobileMenuVisible ? 'bounceOutRight' : 'bounceInRight';
+    mobileMenu.style.animationName = animationName;
+    mobileMenu.style.display = mobileMenuVisible ? 'none' : 'block';
+    mobileMenuVisible = !mobileMenuVisible;
 };
 
 // Featured Image Toggle
-const showImg = () => {
-    document.querySelector('.bg-img').classList.add('show-bg-img');
+const toggleImg = () => {
+    document.querySelector('.bg-img').classList.toggle('show-bg-img');
 };
 
-var hideImg = () => {
-    document.querySelector('.bg-img').classList.remove('show-bg-img');
-};
-
-// ToC Toggle
-var toggleToc = () => {
+// Table of Contents Toggle
+const toggleToc = () => {
     document.getElementById('toc').classList.toggle('show-toc');
 };
 
-if (header !== null) {
-    const throttledAutoHideHeader = throttle(() => {
-        autoHideHeader();
+// Event Listeners
+const setupEventListeners = () => {
+    if (header) {
+        const throttledAutoHideHeader = throttle(autoHideHeader, 250);
 
-        if (mobileMenuVisible) {
-            toggleMobileMenu();
-        }
-    }, 250);
+        listen('#menu-btn', 'click', toggleMobileMenu);
+        listen('#toc-btn', 'click', toggleToc);
+        listen('#img-btn', 'click', toggleImg);
+        listen('.bg-img', 'click', toggleImg);
 
-    // Check if showImg function already exists
-    //const showImg = () => {
-    //    document.querySelector('.bg-img').classList.add('show-bg-img');
-    //};
+        window.addEventListener('scroll', throttledAutoHideHeader);
+    }
+};
 
-    listen('#menu-btn', 'click', toggleMobileMenu);
-    listen('#toc-btn', 'click', toggleToc);
-    listen('#img-btn', 'click', showImg);
-    listen('.bg-img', 'click', hideImg);
-
-    window.addEventListener(
-        'scroll',
-        throttledAutoHideHeader
-    );
-}
+// Execute setup function when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setupEventListeners);

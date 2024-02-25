@@ -37,7 +37,7 @@ compile_sass = true
 # When set to "true", the generated HTML files are minified.
 minify_html = true
 
-# This does the whole example.com/image.jpg url hardlinking thing (supposedly)
+# This does the whole example.com/image.jpg url hardlinking thing
 # When set to "true", files in the `static` directory are hard-linked. Useful for large
 # static files. Note that for this to work, both `static` and the
 # output directory need to be on the same filesystem. Note that the theme's `static`
@@ -59,21 +59,18 @@ extra_syntaxes = []
 
 [markdown]
 
-# Highlight all code blocks found
+# Highlight code blocks
 highlight_code = true
 highlight_theme = "base16-ocean-dark"
 
-render_emoji = true # like :smile: and :shrug:
+# Emojis like :smile: and :shrug:
+render_emoji = true
 
 [translations]
 
-# You can put any kind of data in there and it
-# will be accessible in all templates
+# You can put any kind of data in there and it will be accessible in all templates
 
 [extra]
-
-# MathJax / LaTeX rendering support globally (expensive)
-# math = true # you should enable this per-page when needed (it also gets automatically checked when detecting \tex stuff)
 
 home_subtitle = "Neural Art at its finest :))" # better title and description
 
@@ -93,13 +90,10 @@ hermit_social = [
     { name = "email", link = "mailto:iustin@alphara.art" }
 ]
 
-[extra.highlightjs]
+[extra.author]
 
-#enable = true
-#clipboard = true
-#theme = "1337"
-# theme = "railscasts"
-# theme = "vs2015"
+name = "Iustin Râznic"
+email = "iustin@alphara.art"
 
 [extra.disqus]
 
@@ -122,11 +116,6 @@ hermit_social = [
 # +++
 # to the page front matter
 # Icon will then appear above the page title that will toggle the ToC
-
-[extra.author]
-
-name = "Iustin Râznic"
-email = "iustin@alphara.art"
 
 [extra.google_analytics]
 

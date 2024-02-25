@@ -31,8 +31,7 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-menu"
-        >
+          class="feather feather-menu">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -81,9 +80,9 @@
 	</header>
 
 	<div class="content">
-
 	  {{ page.content | safe }}
 	</div>
+
 	<hr class="post-end">
 	<footer class="post-info">
     {% if page.taxonomies and page.taxonomies.tags %}
@@ -105,7 +104,7 @@
     {% if page.extra.toc %}
     <aside id="toc">
         <div id="TableOfContents">
-            <div class="toc-title">Table of content</div>
+            <div class="toc-title">Table of Contents</div>
             <ul>
                 {% for h1 in page.toc %}
                 <li>
@@ -127,20 +126,20 @@
     {% endif %}
 
   <div class="post-nav thin">
-	{% if page.later %}
-	<a class="next-post" href="{{ page.later.permalink }}">
+	{% if page.extra.later %}
+	<a class="next-post" href="{{ page.extra.later.permalink }}">
 	  <span class="post-nav-label">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
 		  <line x1="19" y1="12" x2="5" y2="12"></line>
 		  <polyline points="12 19 5 12 12 5"></polyline>
 		</svg>&nbsp;Newer</span><br>
-		<span>{{ page.later.title }}</span>
+		<span>{{ page.extra.later.title }}</span>
 	</a>
 	{% endif %}
-	{% if page.earlier %}
-	<a class="prev-post" href="{{ page.earlier.permalink }}">
+	{% if page.extra.earlier %}
+	<a class="prev-post" href="{{ page.extra.earlier.permalink }}">
 	  <span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br>
-	  <span>{{ page.earlier.title }}</span>
+	  <span>{{ page.extra.earlier.title }}</span>
 	</a>
 	{% endif %}
   </div>
@@ -164,7 +163,7 @@
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    {% endif %}
+  {% endif %}
 </main>
 {% endblock main %}
 
