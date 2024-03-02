@@ -3,7 +3,7 @@ base_url = "https://alphara.art"
 
 # Used in RSS by default
 title = "Alphara's Blog"
-description = "Blog dedicated to my stuff" # Neural Art at its finest :))
+description = "Neural Art at its finest :))" # Neural Art at its finest :)) Blog dedicated to my stuff
 
 # The default language, used in RSS and as a fallback value
 default_language = "en"
@@ -72,7 +72,7 @@ render_emoji = true
 
 [extra]
 
-home_subtitle = "Neural Art at its finest :))" # better title and description
+home_subtitle = "Neural Art at its finest :))"
 
 footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
@@ -85,7 +85,6 @@ hermit_social = [
     { name = "github", link = "https://github.com/xAlpharax" },
     { name = "linkedin", link = "https://www.linkedin.com/in/iustin-raznic" },
     { name = "youtube", link = "https://www.youtube.com/@alphara2643" },
-    # { name = "mastodon", link = "https://mastodon.social/@alphara" },
     { name = "twitter", link = "https://twitter.com/IustinRaznic" },
     { name = "email", link = "mailto:iustin@alphara.art" }
 ]
@@ -95,6 +94,11 @@ hermit_social = [
 name = "Iustin Râznic"
 email = "iustin@alphara.art"
 
+[extra.meta]
+
+preview_image = "https://alphara.art/Alphara.png"
+preview_image_alt = "Alphara"
+
 [extra.disqus]
 
 # enable = false
@@ -102,22 +106,30 @@ email = "iustin@alphara.art"
 # Take this from your Disqus account
 # shortname = "my-supa-dupa-blog"
 
+# Make sure to include this on posts that you want comments on:
+# [extra]
+# permalink = "link of the page"
+#
+# in the posts front-matter
+# in order to have the correct URL for the comment section
+
 # Comments can be disabled per page by setting:
 # [extra]
 # disable_comments = true
 #
 # in the posts front-matter
+# this will skip disqus components from rendering on the page all together
 
-# Similarily, but unrelated
-# Table of content can be enabled by adding
-# +++
+# Similarily, but unrelated,
+
+# Table of Contents button-functionality can be enabled per-page by adding:
 # [extra]
 # toc=true
-# +++
-# to the page front matter
-# Icon will then appear above the page title that will toggle the ToC
+#
+# in the page front-matter
 
 [extra.google_analytics]
 
 # enable = false
+
 # id = "UA-4XXXXXXX-X"

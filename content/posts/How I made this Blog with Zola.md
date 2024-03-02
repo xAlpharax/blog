@@ -7,7 +7,7 @@ draft = false
 tags = ["original_post", "blog", "test"]
 
 [extra]
-disable_comments = false
+disable_comments = true
 toc = false
 +++
 

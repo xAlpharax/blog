@@ -2,7 +2,7 @@
  * Utils
  */
 
-// Throttle
+// Throttle Helper
 const throttle = (callback, limit) => {
     let timeoutHandler = null;
     return () => {
@@ -22,8 +22,6 @@ const listen = (selector, eventType, callback) => {
         element.addEventListener(eventType, callback);
     }
 };
-
-// FUNCTIONS
 
 // Auto Hide Header
 const header = document.getElementById('site-header');

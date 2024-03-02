@@ -1,7 +1,9 @@
 {% import "macros.html" as macros %}
 
 <!DOCTYPE html>
+
 <html lang="en-us">
+
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
@@ -71,44 +73,54 @@
 
   <body id="page">
 
-	{% block header %}
-	{% endblock header %}
+    {% block header %}
+    {% endblock header %}
 
-	{% block title %}
-	<div id="spotlight" class="animated fadeIn">
-	  <div id="home-center">
-		<h1 id="home-title">{{config.title}}</h1>
-		<p id="home-subtitle">{{config.extra.home_subtitle}}</p>
-		<div id="home-social">
-		  {{macros::render_social_icons()}}
-		</div>
-		{% endblock title %}
-		{% block main %}
-		<nav id="home-nav" class="site-nav">
-		  {% for s in config.extra.hermit_menu %}
-		  <a href="{{config.base_url ~ s.link}}">{{s.name}}</a>
-		  {% endfor %}
-		</nav>
-		{% endblock main %}
-	  </div>
+    {% block title %}
+    <div id="spotlight" class="animated fadeIn">
+      <div id="home-center">
+        <h1 id="home-title">{{config.title}}</h1>
+        <p id="home-subtitle">{{config.extra.home_subtitle}}</p>
+        <div id="home-social">
+          {{macros::render_social_icons()}}
+        </div>
+        {% endblock title %}
 
-	  {% block footer %}
-	  <div id="home-footer">
-		<p>&copy; {{ now() | date(format="%Y")}}
-      <a href="{{config.base_url}}">{{config.extra.author.name}}</a>
-      {% if config.generate_feed %}
-		  &#183; <a href="{{ get_url(path=config.feed_filename, trailing_slash=false) }}" target="_blank" title="rss">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
-      {% endif %}
-		  </a>
-		</p>
-	  </div>
-	  {% endblock footer %}
-	</div>
+        {% block main %}
+        <nav id="home-nav" class="site-nav">
+          {% for s in config.extra.hermit_menu %}
+          <a href="{{config.base_url ~ s.link}}">{{s.name}}</a>
+          {% endfor %}
+        </nav>
+        {% endblock main %}
+      </div>
 
-	<script src="{{get_url(path="js/main.js")}}"></script>
+      {% block footer %}
+      <div id="home-footer">
+        <p>&copy; {{ now() | date(format="%Y")}}
+          <a href="{{config.base_url}}">{{config.extra.author.name}}</a>
 
-	<!-- Math rendering with KaTeX -->
+          {% if config.generate_feed %}
+          &#183;
+          <a href="{{ get_url(path=config.feed_filename, trailing_slash=false) }}" target="_blank" title="rss">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-rss">
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+          </a>
+          {% endif %}
+
+        </p>
+      </div>
+      {% endblock footer %}
+    </div>
+
+    <script src="{{get_url(path="js/main.js")}}"></script>
+
+    <!-- Math rendering with KaTeX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
@@ -116,17 +128,20 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-        onload="renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+      onload="renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-	{% if config.extra.google_analytics.enable %}
+    {% if config.extra.google_analytics.enable %}
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics.id }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', '{{ config.extra.google_analytics.id }}');
     </script>
     {% endif %}
+
   </body>
+
 </html>

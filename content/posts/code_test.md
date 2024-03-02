@@ -7,7 +7,8 @@ draft = false
 tags = ["test", "code"]
 
 [extra]
-disable_comments = true
+disable_comments = false
+permalink = "https://alphara.art/posts/code-test/"
 toc = false
 
 [extra.earlier]
