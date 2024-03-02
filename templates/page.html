@@ -52,7 +52,7 @@
       <div class="post-meta">
 
         {% if page.date %}
-        <span>{{ page.date | date(format="%b %d, %Y")}}</span>
+        <span>{{ page.date | date(format="%b %d, %Y") }}</span>
         <small> - {{ macros::read_time(words=page.word_count) }}</small>
         {% endif %}
 
@@ -96,7 +96,7 @@
         {% for k, tags in page.taxonomies %}
           {% for t in tags %}
             <span class="tag">
-              <a href="{{get_taxonomy_url(kind="tags", name=t)}}">{{t}}</a>
+              <a href="{{ get_taxonomy_url(kind="tags", name=t) }}">{{ t }}</a>
             </span>
           {% endfor %}
         {% endfor %}
@@ -142,12 +142,12 @@
         <ul>
           {% for h1 in page.toc %}
           <li>
-            <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
             {% if h1.children %}
             <ul>
               {% for h2 in h1.children %}
               <li>
-                <a href="{{h2.permalink | safe}}">{{ h2.title }}</a>
+                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
               </li>
               {% endfor %}
             </ul>
@@ -204,7 +204,7 @@
         this.page.identifier = "{{ page.extra.permalink }}";
       };
       var d = document, s = d.createElement('script');
-      s.src = 'https://{{config.extra.disqus.shortname}}.disqus.com/embed.js';
+      s.src = 'https://{{ config.extra.disqus.shortname }}.disqus.com/embed.js';
       s.setAttribute('data-timestamp', + new Date());
       (d.head || d.body).appendChild(s);
     })();

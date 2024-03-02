@@ -96,8 +96,16 @@ email = "iustin@alphara.art"
 
 [extra.meta]
 
-preview_image = "https://alphara.art/Alphara.png"
+website_type = "blog" # either "blog" or "article" - I haven't seen any difference yet
+
+keywords = "blog, technology, science, philosophy, mathematics, artificial intelligence, AI research, machine learning, data science, deep learning, neural networks, Linux, Void Linux, OpenBSD, system administration, open source, FOSS, developer tools, programming, coding, tutorials, programming languages, software development, software engineering, computer science, algorithms, cybersecurity"
+
+preview_image_src = "https://alphara.art/Alphara.png"
 preview_image_alt = "Alphara"
+
+twitter_card = "summary_large_image" # either "summary" or "summary_large_image" (for big preview image)
+
+twitter_creator = "@IustinRaznic" # your twitter handle
 
 [extra.disqus]
 
