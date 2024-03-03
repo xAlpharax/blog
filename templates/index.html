@@ -51,12 +51,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="favicon-32x32.png") }}"/>
   <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path="favicon-16x16.png") }}"/>
 
-  <link rel="manifest" href="{{ get_url(path="site.webmanifest") }}">
+  <!-- <link rel="manifest" href="{{ get_url(path="site.webmanifest") }}"> PWA + android manifest -->
   <link rel="mask-icon" href="{{ get_url(path="safari-pinned-tab.svg") }}" color="#030303">
   <meta name="msapplication-TileColor" content="#603cba">
   <!-- <meta name="theme-color" content="#ffffff"> discord fancy ruler line on the left of link preview embeds -->
 
-  <link rel="shortcut icon" href="{{ get_url(path="favicon.ico") }}"/> <!-- this is for old browsers that don't support the other tags -->
+  <link rel="shortcut icon" href="{{ get_url(path="favicon.ico") }}"/>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ get_url(path="style.css") }}"/>
@@ -118,8 +118,9 @@
       {% endblock footer %}
     </div>
 
-    <script src="{{ get_url(path="js/main.js") }}"></script>
+    <script defer src="{{ get_url(path="js/main.js") }}"></script>
 
+    {% if page.extra.math %}
     <!-- Math rendering with KaTeX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
@@ -129,6 +130,7 @@
     <!-- To automatically render math in text elements, include the auto-render extension -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
       onload="renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+    {% endif %}
 
     {% if config.extra.google_analytics.enable %}
     <!-- Global Site Tag (gtag.js) - Google Analytics -->

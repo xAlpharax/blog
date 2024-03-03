@@ -7,6 +7,7 @@ draft = false
 tags = ["test", "original_post"]
 
 [extra]
+math = true
 disable_comments = true
 toc = true
 +++
@@ -27,7 +28,7 @@ Inline styles to test:
 
 ---
 
-# Heading 1
+# Heading 1 {#h1}
 
 ## Heading 2
 
