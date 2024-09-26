@@ -31,10 +31,6 @@ Nice! Now let's test shortcodes with a youtube iframe embed video:
 
 ---
 
-{{ youtube(id="dCKeXuVHl1o", autoplay=true) }}
-
----
-
 {{ youtube(id="9h2Z0I2jxRU", autoplay=true) }}
 
 Cool! All these features should be plenty enough for now. I will add some others as we go.

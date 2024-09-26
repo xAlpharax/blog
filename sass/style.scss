@@ -1,7 +1,6 @@
 @import "predefined.scss";
 @import "normalize.scss";
 @import "animate.scss";
-@import "syntax.scss";
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
@@ -94,7 +93,8 @@ a {
   transition-timing-function: ease-out;
 
   &:hover {
-    color: #fff;
+    //color: #fff;
+    color: $theme;
   }
 
   &:focus {
@@ -217,7 +217,7 @@ table {
   .site-nav {
     display: inline-block;
     font-size: 1.1em;
-    opacity: 0.8;
+    //opacity: 0.8;
 
     a {
       margin-left: 0.8em;
@@ -419,7 +419,8 @@ p.img-404 {
     padding-top: 6px;
     margin-right: 1.8em;
     font-size: 1.6em;
-    @include dimmed;
+    //@include dimmed;
+    color: $highlight-grey;
   }
 
   .posts-list {
@@ -443,7 +444,8 @@ p.img-404 {
   .post-day {
     flex-shrink: 0;
     margin-left: 1em;
-    @include dimmed;
+    //@include dimmed;
+    color: $highlight-grey;
   }
 }
 

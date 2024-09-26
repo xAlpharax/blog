@@ -13,7 +13,7 @@ toc = false
 
 [extra.earlier]
 title = "Typography"
-permalink = "https://alphara.art/posts/typography"
+permalink = "https://alphara.art/posts/typography/"
 
 [extra.later]
 title = "Henlo Internet!"
@@ -34,8 +34,6 @@ const sum = (n: number) =>  n * (n + 1) / 2
 ```
 
 ```python
-### multi-threading
-
 import os ; n_cores = os.cpu_count() // 2 ;
 
 from concurrent.futures import ThreadPoolExecutor

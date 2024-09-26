@@ -3,7 +3,7 @@
 {% import "macros.html" as macros %}
 
 {% block header %}
-<header id="site-header" class="animated slideInUp faster">
+<header id="site-header" class="">
   <div class="hdr-wrapper section-inner">
     <div class="hdr-left">
       <div class="site-branding">
@@ -32,7 +32,7 @@
   </div>
 </header>
 
-<div id="mobile-menu" class="animated fast">
+<div id="mobile-menu" class="">
   <ul>
     {% for menu_item in config.extra.hermit_menu %}
     <li><a href="{{ menu_item.link }}">{{ menu_item.name }}</a></li>
@@ -44,7 +44,7 @@
 {% block title %} {% endblock title %}
 
 {% block main %}
-<main class="site-main section-inner thin animated fadeIn faster" style="text-align: center;">
+<main class="site-main section-inner thin" style="text-align: center;">
   {% block content %}
   {% for tag in terms %}
 
