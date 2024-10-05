@@ -47,7 +47,6 @@ pre {
   letter-spacing: normal;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: #eee;
   border-radius: 4px;
   -webkit-overflow-scrolling: touch; // For iOS improved scrolling
 
@@ -55,11 +54,12 @@ pre {
     padding: 0;
     margin: 0;
     background: $midnightblue;
+    color: $text;
   }
 }
 
 code {
-  color: #eee;
+  color: $dark-grey;
   background: $highlight-grey;
   border-radius: 3px;
   padding: 0 3px;
@@ -93,7 +93,6 @@ a {
   transition-timing-function: ease-out;
 
   &:hover {
-    //color: #fff;
     color: $theme;
   }
 
@@ -246,7 +245,7 @@ table {
   cursor: pointer;
 
   &:hover {
-    color: #fff;
+    color: $theme;
   }
 
 }

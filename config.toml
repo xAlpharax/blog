@@ -52,6 +52,7 @@ taxonomies = [
 highlight_code = true
 #highlight_theme = "base16-ocean-dark"
 highlight_theme = "material-dark"
+# try more syntax highlighting themes
 
 # Use emojis like :smile: and :shrug:
 render_emoji = true
