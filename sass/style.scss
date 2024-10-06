@@ -10,15 +10,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-
+  background: #5c6773; // color used for code comment in ayu-dark
   &:hover {
     background: $text;
   }
 }
 
 html {
-  background: $light-grey;
+  background: $dark-grey;
   line-height: 1.6;
   letter-spacing: 0.06em;
 }
@@ -89,7 +88,7 @@ a {
   text-decoration: none;
   border: none;
   transition-property: color;
-  transition-duration: 0.5s;
+  transition-duration: 0.0s; // originally: 0.5s
   transition-timing-function: ease-out;
 
   &:hover {
@@ -344,7 +343,7 @@ p.img-404 {
       }
 
       &:hover {
-        border-color: #fff;
+        border-color: $theme;
       }
 
       svg {

@@ -50,9 +50,9 @@ taxonomies = [
 
 # Highlight code blocks
 highlight_code = true
-#highlight_theme = "base16-ocean-dark"
-highlight_theme = "material-dark"
-# try more syntax highlighting themes
+#highlight_theme = "boron" # 100% best practice contrast for comments
+highlight_theme = "ayu-dark" # 94%
+#highlight_theme = "1337" # 94%
 
 # Use emojis like :smile: and :shrug:
 render_emoji = true

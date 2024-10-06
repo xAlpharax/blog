@@ -3,13 +3,16 @@
 
 // My X11 colors
 //
-$theme: #e94c80;
-$text: #ace6f0; // fg // general text // white
-$light-grey: #0a001f; // bg // blue
-$dark-grey: #0a001f;
-$highlight-grey: #828ff9;
+$theme: #e94c80; // accent // pinkred
+$text: #ace6f0; // fg // general text // cyan
+$dark-grey: #0a001f; // bg // dark purpleblue
+$highlight-grey: #828ff9; // inactive accent // light purpleblue
 
-$midnightblue: #212121; // to fix code syntax highlighting
+// Syntax highlighting fix and bg of the scrollbar
+//
+//$midnightblue: #151515; // boron
+$midnightblue: #0f1419; // ayu-dark
+//$midnightblue: #191919; // 1337
 
 // Fonts
 //
