@@ -1,10 +1,10 @@
 +++
-title = "Typography"
-date = 2018-09-29T11:36:33+08:00
+title = "Test Typography For The Blog"
+date = 2025-01-26
 draft = false
 
 [taxonomies]
-tags = ["test", "original_post"]
+tags = ["test-formatting"]
 
 [extra]
 math = true
@@ -40,6 +40,10 @@ Inline styles to test:
 
 ###### Heading 6
 
+Let's test manual anchor link declaration:
+
+Nice, let's test internal linking now: [my link](@/posts/typography.md#h1)
+
 Cute Table:
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
@@ -47,6 +51,7 @@ Cute Table:
 | col 3 is      | some wordy text |         $1600 |
 | col 2 is      |    centered     |           $12 |
 | zebra stripes |    are neat     |            $1 |
+|               |                 |               |
 
 Lists:
 

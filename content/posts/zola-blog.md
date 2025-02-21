@@ -1,17 +1,17 @@
 +++
-title = "Hello Internet"
+title = "How I made this Blog with Zola"
 date = 2024-01-27
-draft = false
+draft = true
 
 [taxonomies]
-tags = ["original_post", "blog", "test"]
+tags = ["guide"]
 
 [extra]
 disable_comments = true
-toc = false
+toc = true
 +++
 
-Hello, World! This is my first post on my new blog. I'm excited to share my thoughts with you.
+Hello, Internet! This is my first post on my new blog. I'm excited to share my thoughts with you.
 
 First off, how did I make this? I used Zola - a static site generator written in Rust. It's fast, easy to use, and has lots of features.
 

@@ -1,23 +1,23 @@
 +++
-title = "Test code syntax highlight"
-date = 2020-10-13
+title = "Test Code Syntax Highlighting"
+date = 2025-01-27
 draft = false
 
 [taxonomies]
-tags = ["test", "code"]
+tags = ["test-formatting"]
 
 [extra]
 disable_comments = false
-permalink = "https://alphara.art/posts/code-test/"
+permalink = "https://alphara.art/posts/code-syntax-highlighting/"
 toc = false
 
 [extra.earlier]
-title = "Typography"
+title = "Test Typography"
 permalink = "https://alphara.art/posts/typography/"
 
 [extra.later]
-title = "Henlo Internet!"
-permalink = "https://alphara.art/posts/how-i-made-this-blog-with-zola/"
+title = "Test YouTube"
+permalink = "https://alphara.art/posts/youtube/"
 +++
 
 ```rust
@@ -40,4 +40,22 @@ from concurrent.futures import ThreadPoolExecutor
 
 with ThreadPoolExecutor(max_workers=n_cores) as executor:
     executor.map(render, range(0, len(image_array)))
+```
+
+```zig
+const std = @import("std");
+
+pub fn main() void {
+    const user = User{
+        .power = 9001,
+        .name = "Goku",
+    };
+
+    std.debug.print("{s}'s power is {d}\n", .{ user.name, user.power });
+}
+
+pub const User = struct {
+    power: u64,
+    name: []const u8,
+};
 ```
