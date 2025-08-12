@@ -16,21 +16,21 @@ I've always wanted to give Rust a "go" (pun intended as I previously wanted to t
 
 ## Day 1
 
-I've had this [interactive book](https://doc.rust-lang.org/stable/book/ch00-00-introduction.html) in my open tabs for ages at this point. Time to actually read it.
+I've had this [interactive book](https://doc.rust-lang.org/stable/book/index.html) in my open tabs for ages at this point. Time to actually read it.
 
 As far as the introduction goes, it seems the Rust book is serious/rigorous, especially when it comes to signaling the different ways a program fails:
 
-![Image](https://alphara.art/images/20250730210132.png)
+{{ image(src="images/20250730210132.png", alt="A table from the Rust book showing error types", lazy=false, fetch="high") }}
 
 Immediately after seeing this table, my educated guess was that the book will be delving deep into the borrow checker and the many intermediary checks that are done by the clever rust compiler pipeline. I'm not an expert in compilers and how written code gets magically transformed into machine code, but recently I saw [this video](https://youtu.be/XJC5WB2Bwrc) and saw that compared to pretty much any other compiled language, rust adds a bunch of extra steps that are supposed to be modern quality of life improvements. I am excited to see how this book begins.
 
 This book organizes chapters in two categories:
 
->You’ll find two kinds of chapters in this book: concept chapters and project chapters. In concept chapters, you’ll learn about an aspect of Rust. In project chapters, we’ll build small programs together, applying what you’ve learned so far.
+>You’ll find two kinds of chapters in this book: concept chapters and project chapters. In concept chapters, you’ll learn about an aspect of Rust. In project chapters, we’ll build small programs together, applying what you’ve learned so far.[^1]
 
 Aperently the image I just pasted here is related to this paragraph:
 
->An important part of the process of learning Rust is learning how to read the error messages the compiler displays: these will guide you toward working code. As such, we’ll provide many examples that don’t compile along with the error message the compiler will show you in each situation. Know that if you enter and run a random example, it may not compile! Make sure you read the surrounding text to see whether the example you’re trying to run is meant to error. Ferris will also help you distinguish code that isn’t meant to work: (image) In most situations, we’ll lead you to the correct version of any code that doesn’t compile.
+>An important part of the process of learning Rust is learning how to read the error messages the compiler displays: these will guide you toward working code. As such, we’ll provide many examples that don’t compile along with the error message the compiler will show you in each situation. Know that if you enter and run a random example, it may not compile! Make sure you read the surrounding text to see whether the example you’re trying to run is meant to error. Ferris will also help you distinguish code that isn’t meant to work: (image) In most situations, we’ll lead you to the correct version of any code that doesn’t compile.[^1]
 
 Cool. Let's dive in further.
 
@@ -66,7 +66,7 @@ I find it interesting how the `mut` keyword is needed both when creating a new m
 
 Apparently the full correct explanation is this:
 
->The `&` indicates that this argument is a _reference_, which gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times. References are a complex feature, and one of Rust’s major advantages is how safe and easy it is to use references. You don’t need to know a lot of those details to finish this program. For now, all you need to know is that, like variables, references are immutable by default. Hence, you need to write `&mut guess` rather than `&guess` to make it mutable. (Chapter 4 will explain references more thoroughly.)
+>The `&` indicates that this argument is a _reference_, which gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times. References are a complex feature, and one of Rust’s major advantages is how safe and easy it is to use references. You don’t need to know a lot of those details to finish this program. For now, all you need to know is that, like variables, references are immutable by default. Hence, you need to write `&mut guess` rather than `&guess` to make it mutable. (Chapter 4 will explain references more thoroughly.)[^1]
 
 The key highlight here is that references are "immutable by default". That's one interesting quirk.
 
@@ -149,7 +149,7 @@ The first sub-chapter talks about:
 1. mutability - variables, declared by `let` are by default immutable and changing the value of an immutable variable is forbidden unless the `mut` keyword is used in the declaration. After a variable is marked as mutable, it can change its value as many times as possible in other parts of the code.
 2. constants - values declared by the `const` keyword. These don't change at any point during a program's execution and are usually "all uppercase with underscores between words". They also need to be a constant expression, "not the result of a value that could only be computed at runtime".
 3. Shadowing - this is very interesting: it basically means that you can reuse the variable name after assigning it to a different expression and even a new data type. they also have this behavior of overshadowing which means that the last declaration in the scope is the one that's going to be used by code in that scope, the book explains this pretty simply:
-   
+
 ```rust
 fn main() {
     let x = 5;
@@ -222,3 +222,5 @@ Anyway, playing around with rust in this manner is cool, I'm pretty sure people 
 ## Day 3
 
 The second sub-chapter delves into Data Types.
+
+[^1]: From the [book](https://doc.rust-lang.org/stable/book/index.html)

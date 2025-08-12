@@ -1,0 +1,46 @@
+{# /templates/shortcodes/image.html (Version 7 - The Final Quality Fix) #}
+
+{# --- Manually check for required 'src' and 'alt' parameters --- #}
+{% if not src %}
+    {{ throw(message="The 'src' parameter is required for the image shortcode.") }}
+{% endif %}
+{% if not alt %}
+    {{ throw(message="The 'alt' parameter is required for the image shortcode.") }}
+{% endif %}
+
+{# --- Get optional parameters, with sensible defaults --- #}
+{% set lazy = lazy | default(value=true) %}
+{% set fetch = fetch | default(value="auto") %}
+{% set quality = quality | default(value=60) %} {# <-- New: Set a default quality #}
+
+{# --- Let Zola process the image into ALL necessary formats and sizes --- #}
+{% set image_meta = get_image_metadata(path=src) %}
+
+{# Create small versions (PNG and WebP) with higher compression #}
+{% set image_small_png = resize_image(path=src, width=383, op="fit_width", quality=quality) %}
+{% set image_small_webp = resize_image(path=src, width=383, op="fit_width", format="webp", quality=quality) %}
+
+{# Create large versions (PNG and WebP) with higher compression #}
+{% set image_large_png = resize_image(path=src, width=682, op="fit_width", quality=quality) %}
+{% set image_large_webp = resize_image(path=src, width=682, op="fit_width", format="webp", quality=quality) %}
+
+<picture>
+    {# --- MODERN FORMATS FIRST (WebP) --- #}
+    <source media="(max-width: 600px)" srcset="{{ image_small_webp.url }}" type="image/webp">
+    <source media="(min-width: 601px)" srcset="{{ image_large_webp.url }}" type="image/webp">
+
+    {# --- FALLBACK FORMATS (PNG) --- #}
+    <source media="(max-width: 600px)" srcset="{{ image_small_png.url }}">
+    <source media="(min-width: 601px)" srcset="{{ image_large_png.url }}">
+
+    {# --- FINAL FALLBACK <img> --- #}
+    <img
+        src="{{ image_large_png.url }}"
+        width="{{ image_meta.width }}"
+        height="{{ image_meta.height }}"
+        alt="{{ alt }}"
+        {% if lazy %}loading="lazy"{% else %}loading="eager"{% endif %}
+        fetchpriority="{{ fetch }}"
+        style="width: 100%; height: auto; border-radius: 4px; margin: 1.5rem 0;"
+    >
+</picture>

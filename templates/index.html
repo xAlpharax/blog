@@ -61,7 +61,23 @@
     <link rel="shortcut icon" href="{{ get_url(path="favicon.ico") }}"/>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ get_url(path="style.css") }}"/>
+    <!--<link rel="stylesheet" href="{{ get_url(path="style.css") }}"/> old way of doing this, inefficient -->
+
+
+    {# 1. Load our single combined critical CSS file. #}
+    {% set critical_css = load_data(path="static/css/critical.css", required=false) %}
+
+    {# 2. If it was found, inline it. #}
+    {% if critical_css %}
+      <style>{{ critical_css | safe }}</style>
+    {% endif %}
+
+    {# 3. Load the full stylesheet asynchronously (this part is the same). #}
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}" media="print" onload="this.media='all'">
+
+    {# 4. Provide a fallback for browsers without JavaScript. #}
+    <noscript><link rel="stylesheet" href="{{ get_url(path='style.css') }}"></noscript>
+    <!-- Stylesheets End -->
 
     {% if page.extra.math %}
     <!-- Math rendering with KaTeX -->
