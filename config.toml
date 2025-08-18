@@ -76,6 +76,21 @@ smart_punctuation = false
 # For example, `![xx](...)` is ok but `![*x*x](...)` isn’t ok
 lazy_async_image = false
 
+[search]
+# Whether to build a search index to be used by the templates
+build_search_index = true
+# The name of the file to write the search index to.
+# This is used by the default search JavaScript implementation.
+index_format = "elasticlunr_json"
+# Whether to include the title of the page in the search index.
+include_title = true
+# Whether to include the description of the page in the search index.
+include_description = true
+# Whether to include the path of the page in the search index.
+include_path = true
+# Whether to include the rendered content of the page in the search index.
+include_content = true
+
 [extra]
 
 home_subtitle = "Neural Art at its finest :))"

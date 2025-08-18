@@ -2,3 +2,6 @@ public/
 .obsidian/
 
 *.sh
+
+*.png
+*.webp

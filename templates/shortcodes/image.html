@@ -11,14 +11,14 @@
 {# --- Get optional parameters, with sensible defaults --- #}
 {% set lazy = lazy | default(value=true) %}
 {% set fetch = fetch | default(value="auto") %}
-{% set quality = quality | default(value=60) %} {# <-- New: Set a default quality #}
+{% set quality = quality | default(value=100) %} {# <-- New: Set a default quality #}
 
 {# --- Let Zola process the image into ALL necessary formats and sizes --- #}
 {% set image_meta = get_image_metadata(path=src) %}
 
 {# Create small versions (PNG and WebP) with higher compression #}
-{% set image_small_png = resize_image(path=src, width=383, op="fit_width", quality=quality) %}
-{% set image_small_webp = resize_image(path=src, width=383, op="fit_width", format="webp", quality=quality) %}
+{% set image_small_png = resize_image(path=src, width=575, op="fit_width", quality=quality) %}
+{% set image_small_webp = resize_image(path=src, width=575, op="fit_width", format="webp", quality=quality) %}
 
 {# Create large versions (PNG and WebP) with higher compression #}
 {% set image_large_png = resize_image(path=src, width=682, op="fit_width", quality=quality) %}
