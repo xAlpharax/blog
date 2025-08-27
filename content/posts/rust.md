@@ -1,5 +1,6 @@
 +++
 title = "Rust For 1 Week"
+description = "My first impressions and learning journey after spending a week with the Rust programming language."
 date = 2025-07-30
 draft = false
 
@@ -7,6 +8,11 @@ draft = false
 tags = ["programming"]
 
 [extra]
+# You can optionally add a specific image for social media previews
+# If you don't add this, it will use the site-wide default from your config.toml
+image_src = "images/20250730210132.png"
+image_alt = "A table from the Rust book showing error types"
+
 math = false
 disable_comments = true
 toc = false

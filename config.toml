@@ -64,7 +64,7 @@ external_links_target_blank = false
 # Whether to set rel="nofollow" for all external links
 external_links_no_follow = false
 
-# Whether to set rel="noreferrer" for all external links
+# Whether to set rel="noreferrer" for all external links (privacy preserving)
 external_links_no_referrer = true
 
 # Whether smart punctuation is enabled (changing quotes, dashes, dots in their typographic form)
@@ -117,11 +117,7 @@ email = "iustin@alphara.art"
 
 [extra.meta]
 
-website_type = "blog" # either "blog" or "article" - I haven't seen any difference though
-
-keywords = "blog, technology, science, philosophy, mathematics, artificial intelligence, AI research, machine learning, data science, deep learning, neural networks, Linux, Void Linux, OpenBSD, system administration, open source, FOSS, developer tools, programming, coding, tutorials, programming languages, software development, software engineering, computer science, algorithms, cybersecurity"
-
-preview_image_src = "https://alphara.art/Alphara.png"
+preview_image_src = "Alphara.png"
 preview_image_alt = "Alphara"
 
 twitter_card = "summary_large_image" # either "summary" or "summary_large_image" (for big preview image)

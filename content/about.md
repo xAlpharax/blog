@@ -17,4 +17,4 @@ Here you'll see the following general topics:
 
 I'm pretty much sticking to these. Feel free to contact me if you want to.
 
-![Image](https://brainmade.org/88x31-dark.png)
+![brainmade.org](/images/brain-made-org-88x31-dark.png)
