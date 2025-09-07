@@ -3,4 +3,4 @@ public/
 
 *.sh
 
-*.webp
+static/processed_images/
